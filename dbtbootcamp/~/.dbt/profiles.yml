@@ -5,7 +5,7 @@ dbtbootcamp:
       database: AIRBNB
       password: dbtPassword123
       role: transform
-      schema: dev
+      schema: DEV
       threads: 1
       type: snowflake
       user: dbt

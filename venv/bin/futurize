@@ -1,4 +1,4 @@
-#!/Users/marius/Documents/coding/data/dbt_bootcamp/course/venv/bin/python3.11
+#!/Users/marius/Documents/coding/data/dbt_bootcamp/dbt-bootcamp-course/venv/bin/python3.11
 # EASY-INSTALL-ENTRY-SCRIPT: 'future==0.18.3','console_scripts','futurize'
 import re
 import sys
