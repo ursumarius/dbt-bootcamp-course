@@ -12,6 +12,6 @@
 --monitor by timestamp, in particular by updated_at
 
 
-select * FROM {{ source('airbnb', 'listings') }}
+SELECT * FROM {{ source('airbnb', 'listings') }}
 
 {% endsnapshot %}
