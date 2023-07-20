@@ -1,3 +1,8 @@
+{{
+  config(
+    materialized = 'view'
+  )
+}}
 
 WITH src_listings AS (
 	SELECT * FROM {{ ref('src_listings')}}  -- stands for ref-erence the src_listings model
