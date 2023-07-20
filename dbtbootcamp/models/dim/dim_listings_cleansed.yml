@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_listings_cleansed
+    columns:
+
+      - name: listing_id
+        tests:
+          - unique #generic test built in #1
+          - not_null #generic test built in #2
+
+      - name: listing_name
+        tests:
+          - not_null
+
+      - name: room_type
+        description: "type of property, should fall in set categories:"
+        tests:
+          - not_null
+          - accepted_values: #generic test built in #3
+              name: unexpected_room_type # We can name our tests to make it easier to give more meaningful errors
+              values:
+                ['Entire home/apt',
+                'Private room',
+                'Shared room',
+                'Hotel room']
+
