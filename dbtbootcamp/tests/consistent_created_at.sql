@@ -6,3 +6,4 @@ INNER JOIN {{ ref('fct_reviews') }} f
 USING (listing_id)
 WHERE f.review_date < lc.created_at
 
+--testing git merge -ff-only
