@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: dim_hosts_cleansed
+    description: Cleansed table which contains airbnb listings. minimum nights corrects and price parses from string
+    columns:
+
+    - name: host_id
+      description: Host ID as in the raw file
+      tests:
+        - not_null
+        - unique
+
+    - name: host_name
+      description: Host name as in the raw file, otherwise cleansed to show Anonymous
+      tests:
+        - not_null
+
+    - name: is_superhost
+      description: Whether the host is a superhost, boolean
+      tests:
+        - accepted_values:
+              name: super_host_t_f
+              values:
+                ['t',
+                'f']
+
+    - name: created_at
+      description: Created at datetime as in the raw file
+      tests:
+        - not_null
+
+    - name: updated_at
+      description: Updated at datetime, imported from raw then handled by the data warehouse provider
+      tests:
+        - not_null
