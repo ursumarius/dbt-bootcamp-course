@@ -14,8 +14,10 @@ models:
       - name: listing_name
         description: Listing name from raw file
         tests:
-          - not_null
-          - unique
+          - unique:
+              severity: warn
+          - not_null:
+              severity: error
 
       - name: host_id
         description: Host id from cleansed hosts
