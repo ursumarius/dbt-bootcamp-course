@@ -12,5 +12,4 @@ GROUP BY
     review_sentiment
 ORDER BY
     is_full_moon,
-    review_sentiment;
-
+    review_sentiment
