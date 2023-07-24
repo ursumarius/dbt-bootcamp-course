@@ -35,7 +35,7 @@
         description: "host id from cleansed hosts"
         tests:
           - not_null
-          - relationship: #generic test built in #4
+          - relationships: #generic test built in #4
               to: ref('dim_hosts_cleansed')
               field: host_id
 
