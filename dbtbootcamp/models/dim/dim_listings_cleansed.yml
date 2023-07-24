@@ -42,7 +42,12 @@ models:
         tests:
           - positive_value
 
-
+      #this code does not work. it should result in warning, but it doesnt.
+      - name: created_at
+        description: Created at, from the raw file
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 'TO_TIMESTAMP(2025-01-01)'
 
 
 
