@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: fct_reviews
+    description: Reviews table with a new field that is a has of the other 4
+    columns:
+
+      - name: listing_id
+        description: Listing ID from raw file
+        tests:
+          - relationships:
+              to: ref('dim_hosts_cleansed')
+              field: listing_id
+
+      - name: reviewer_name
+        tests:
+          - not_null
+
+      - name: review_sentiment
+        tests:
+          - accepted_values:
+              values: ['positive', 'neutral', 'negative']
