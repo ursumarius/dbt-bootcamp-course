@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: src_listings
+    columns:
+      - name: room_type
+        tests:
+          - dbt_expectations.expect_column_distinct_count_to_equal:
+              value: 4
+      - name: price_str
+        tests:
+          - dbt_expectations.expect_column_values_to_match_regex:
+              regex: "^\\\\$[0-9][0-9\\\\.]+$"
+              # ^ means start with
+              # \ to escape. another \ to scape the initial slash for jinja.
+              # \\escape the dot which has a meaning by itself
+              # add two more backslashes because YAML will take away every second backslash.
+                # but we need two left for Snowflake, which will halve it too
+              # [][] a number followed by a float
+              # $ means that it ends with that
