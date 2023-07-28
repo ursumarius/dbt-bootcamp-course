@@ -6,11 +6,12 @@ models:
     columns:
 
       - name: listing_id
-        description: Listing ID from raw file
         tests:
           - relationships:
-              to: ref('dim_hosts_cleansed')
+              to: ref('dim_listings_cleansed')
               field: listing_id
+
+      - name: review_date
 
       - name: reviewer_name
         tests:

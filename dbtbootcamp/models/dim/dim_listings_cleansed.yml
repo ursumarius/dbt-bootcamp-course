@@ -20,7 +20,7 @@ models:
               severity: error
 
       - name: host_id
-        description: Host id from cleansed hosts
+        description: Host id which administers the listing
         tests:
           - not_null
           - relationships: #generic test built in #4
@@ -28,7 +28,7 @@ models:
               field: host_id
 
       - name: room_type
-        description: Type of property, should fall in set categories
+        description: Type of property, should fall in 4 set categories
         tests:
           - not_null
           - accepted_values: #generic test built in #3
@@ -39,14 +39,16 @@ models:
                 'Shared room',
                 'Hotel room']
 
+      - name: price
+        description: Price in dollars, parsed in number form with 2 decimals
+
       - name: minimum_nights
         description: '{{ doc("dim_listings_cleansed_minimum_nights")}}'
         tests:
           - positive_value
 
-      #this code does not work. it should result in warning, but it doesnt.
       - name: created_at
-        description: Created at, from the raw file
-        tests:
-          - dbt_utils.accepted_range:
-              min_value: 'TO_TIMESTAMP(2025-01-01)'
+        description: Date the listing was first created
+
+      - name: updated_at
+        description: Date the listing was updated, now handled by our data warehouse

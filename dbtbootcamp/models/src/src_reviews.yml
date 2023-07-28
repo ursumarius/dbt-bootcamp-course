@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: src_reviews
+    description: Table that holds the reviews given
+    columns:
+      - name: listing_id
+        description: The id of listing about which the review is about
+
+      - name: review_date
+        description: The date when the review was left
+
+      - name: reviewer_name
+        description: The name of the user who left the review
+
+      - name: review_text
+        description: The content of the review
+
+      - name: review_sentiment
+        description: The sentiment of the review, positive, neutral or negative

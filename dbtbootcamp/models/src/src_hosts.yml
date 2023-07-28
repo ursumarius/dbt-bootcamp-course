@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: src_hosts
+    description: Table that holds the hosts of the properties
+    columns:
+      - name: host_id
+        description: The id of the host (ad owner)
+
+      - name: host_name
+        description: The name of the host
+
+      - name: is_superhost
+        description: Whether the host falls in the superhost group
+
+      - name: created_at
+        description: When the account was created
+
+      - name: updated_at
+        description: When the account was updated, handled by the backend of the system that holds the raw data

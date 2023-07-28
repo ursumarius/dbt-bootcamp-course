@@ -2,12 +2,26 @@ version: 2
 
 models:
   - name: src_listings
+    description: Table that holds the listings (properties)
     columns:
+      - name: listing_id
+        description: The ID of the listing
+
+      - name: listing_name
+        description: Title given to the listing
+
+      - name: listing_url
+        description: Unique URL used to find the listing
+
       - name: room_type
+        description: Type of property, should fall in 4 set categories
         tests:
           - dbt_expectations.expect_column_distinct_count_to_equal:
               value: 4
+          # basic sanity check. The real check happens in the next model (dim_listings_cleansed)
+
       - name: price_str
+        description: Price in dollars, string form
         tests:
           - dbt_expectations.expect_column_values_to_match_regex:
               regex: "^\\\\$[0-9][0-9\\\\.]+$"
@@ -18,3 +32,13 @@ models:
                 # but we need two left for Snowflake, which will halve it too
               # [][] a number followed by a float
               # $ means that it ends with that
+
+      - name: minimum_nights
+        description: '{{ doc("dim_listings_cleansed_minimum_nights")}}'
+
+      - name: created_at
+        description: Date the listing was first created
+
+      - name: updated_at
+        description: Date the listing was updated, now handled by our data warehouse
+

@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: mart_fullmoon_reviews
+    description: Table combining fullmoon dates and reviews
