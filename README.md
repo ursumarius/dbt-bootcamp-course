@@ -27,13 +27,29 @@ Built using Preset.io
 
 </br>
 
-## Raw data preview
+## Let's start from the beginning: this is the raw data:
 ![input schema](dbtbootcamp/assets/input_schema.png)
 
 </br>
 
-## Functionality used
-### Cleansing using SQL and Jinja
+
+## Libraries and examples of work done:
+### libraries used:
+```yaml
+packages:
+  - package: dbt-labs/dbt_utils
+    version: 0.8.0
+
+  - package: calogica/dbt_expectations
+    version: [">=0.8.0", "<0.9.0"]
+
+  - package: dbt-labs/codegen
+    version: 0.9.0
+
+```
+</br>
+
+### Cleansing data using SQL and Jinja
 ```sql
 -- if the 'host_name' is missing, then use 'Anonymous'
   NVL(host_name, 'Anonymous')
