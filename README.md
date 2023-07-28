@@ -7,7 +7,7 @@ Snowflake was used as the data warehouse while dbt was the data transformation l
 
 ## End result
 ### Data model
-Starting off with good quality raw data, which was read into the source files, adjusting the column names for consistency. The data was cleaned and parsed, then joined into tables with new columns.
+Great quality raw data was read into the source files, adjusting the column names for consistency. The data was cleaned and parsed, then joined into new views/tables/ephemeral materializations.
 </br>
 
 ![lineage graph](dbtbootcamp/assets/lineage_graph.png)
@@ -19,18 +19,21 @@ Built using Preset.io
 </br>
 </br>
 
-## Transformed tables:
+## Data that has undergone transformation:
 ### dim_listings_w_hosts
-![mdim_listings_w_hosts](dbtbootcamp/assets/dim_listings_w_hosts.png)
+![dim_listings_w_hosts](dbtbootcamp/assets/dim_listings_w_hosts.png)
 ### mart_fullmoon_reviews
 ![mart_fullmoon_reviews](dbtbootcamp/assets/mart_fullmoon_reviews.png)
 
+</br>
 
 ## Raw data preview
 ![input schema](dbtbootcamp/assets/input_schema.png)
 
+</br>
+
 ## Functionality used
-### Examples of cleansing using SQL and Jinja
+### Cleansing using SQL and Jinja
 ```sql
 -- if the 'host_name' is missing, then use 'Anonymous'
   NVL(host_name, 'Anonymous')
@@ -54,10 +57,23 @@ Built using Preset.io
   AS review_id
 
 ```
-### Example of tests
+</br>
 
-```yaml
-# custom made test
+### Tests: custom, built-in, external packages
+
+```sql
+-- Custom made test, as a takehome assignment:
+-- Checks that there is no review date that is submitted before its listing was created
+-- Make sure that every review_date in fct_reviews is more recent than the associated created_at in dim_listings_cleansed
+
+{% test consistent_review_created_at(model) %}
+
+SELECT * FROM  {{ ref('dim_listings_cleansed') }} lc
+INNER JOIN {{ ref('fct_reviews') }} f
+USING (listing_id)
+WHERE f.review_date < lc.created_at
+
+{% endtest %}
 ```
 
 ```yaml
@@ -73,6 +89,35 @@ Built using Preset.io
 	min_value: 50
 	max_value: 500
 ```
+</br>
+
+### Example of Snapshots
+```sql
+-- A snapshot of the raw listings data, to monitor and keep track of all past versions
+
+{% snapshot scd_raw_listings %}
+
+{{
+   config(
+       target_schema='dev',
+       unique_key='id',
+       strategy='timestamp',
+       updated_at='updated_at',
+       invalidate_hard_deletes=True
+   )
+}}
+-- invalidate_hard_deletes - deletes are monitored too
+-- strategy, updated_at - monitor by timestamp (by updated_at)
+
+
+SELECT * FROM {{ source('airbnb', 'listings') }}
+
+{% endsnapshot %}
+```
+### Snapshot @ change in minimum_nights:
+![scd_raw_listings](dbtbootcamp/assets/snapshot-scd_raw_listings.png)
+
+</br>
 
 ## How to: run it yourself
 ### Work in progress
