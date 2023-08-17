@@ -1,5 +1,6 @@
 # dbt Bootcamp on Udemy
 **Objective:** to learn dbt by transforming real-world Airbnb data from Berlin, Germany.
+</br>
 This course was made by: Zoltan and Miklos on [Udemy](https://www.udemy.com/course/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt).
 </br>
 </br>
