@@ -1,5 +1,7 @@
 version: 2
 
+# done by Marius (student) as a takehome assignment
+
 models:
   - name: src_hosts
     description: Table that holds the hosts of the properties

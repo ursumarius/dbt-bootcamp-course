@@ -1,3 +1,5 @@
+-- done by Marius (student) as a takehome assignment
+
 WITH raw_hosts AS (
     SELECT * FROM {{source('airbnb', 'hosts')}}
 )

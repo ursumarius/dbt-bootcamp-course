@@ -1,5 +1,7 @@
 version: 2
 
+# done by Marius (student) as a takehome assignment
+
 models:
   - name: dim_hosts_cleansed
     description: Cleansed table which contains airbnb listings. minimum nights corrects and price parses from string
