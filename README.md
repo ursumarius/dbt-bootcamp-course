@@ -1,12 +1,11 @@
 # dbt Bootcamp on Udemy
-**Objective:** </br>
-To learn dbt by transforming real-world Airbnb data from Berlin, Germany.
+Course authors: Zoltan and Miklos on [Udemy](https://www.udemy.com/course/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt).
+</br>
+
+**Objective:** to learn dbt by transforming real-world Airbnb data from Berlin, Germany.
 </br>
 </br>
 Snowflake was used as the data warehouse while dbt was the data transformation layer.
-</br>
-</br>
-Course authors: Zoltan and Miklos on [Udemy](https://www.udemy.com/course/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt).
 </br>
 </br>
 Please scroll down to see examples of work, a dashboard, and lessons learned.
