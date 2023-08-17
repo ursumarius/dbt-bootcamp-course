@@ -1,9 +1,10 @@
 # dbt Bootcamp on Udemy
-Objective: learn dbt by transforming real-world Airbnb data.
+**Objective:** learn dbt by transforming real-world Airbnb data.
 </br>
 We used publically accessible data about Berlin, Germany.
 </br>
 'Snowflake' was used as the data warehouse while 'dbt' was the data transformation layer.
+</br>
 </br>
 Course authors: Zoltan and Miklos on [Udemy](https://www.udemy.com/course/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt).
 </br>
@@ -131,8 +132,19 @@ SELECT * FROM {{ source('airbnb', 'listings') }}
 ### Snapshot @ change in minimum_nights:
 ![scd_raw_listings](dbtbootcamp/assets/snapshot-scd_raw_listings.png)
 </br>
+
+
+### Dashboard summary
+Built using Preset.io
 </br>
-Learned lessons:
+![dashboard summary](dbtbootcamp/assets/dashboard-dbt-airbnb-summary.png)
+</br>
+
+## Conclusion
+The course took about a week and I can fully recommend it.
+</br>
+
+**Learned lessons:**
 * Theory behind the data science process, the advantages of dbt
 * Using VCS, a Python venv, installing dbt and key plugins
 * Cleansing and doing operations on data through intermediate SQL
@@ -144,16 +156,10 @@ Learned lessons:
 * Documentation: best practices for writing and building documentation, including the Docs block
 </br>
 
-</br>
+**Note:** </br>
 Everything in this repository was written by me, sometimes by following video lectures, other times ahead of the lecture. At least 3 of the models / docs / test files were individual assignments.
 </br>
 
-### Dashboard summary
-Built using Preset.io
-</br>
-![dashboard summary](dbtbootcamp/assets/dashboard-dbt-airbnb-summary.png)
-</br>
-</br>
 
 
 ## How to: run it yourself
