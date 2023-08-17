@@ -16,10 +16,10 @@ Great quality raw data was read into the source files, adjusting the column name
 
 ![lineage graph](dbtbootcamp/assets/lineage_graph.png)
 
-## Data after undergoing transformation:
-### dim_listings_w_hosts
+### Data after undergoing transformation:
+#### dim_listings_w_hosts
 ![dim_listings_w_hosts](dbtbootcamp/assets/dim_listings_w_hosts.png)
-### mart_fullmoon_reviews
+#### mart_fullmoon_reviews
 ![mart_fullmoon_reviews](dbtbootcamp/assets/mart_fullmoon_reviews.png)
 
 </br>
