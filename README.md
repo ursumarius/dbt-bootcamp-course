@@ -2,6 +2,7 @@
 **Objective:** </br>
 To learn dbt by transforming real-world Airbnb data from Berlin, Germany.
 </br>
+</br>
 Snowflake was used as the data warehouse while dbt was the data transformation layer.
 </br>
 </br>
