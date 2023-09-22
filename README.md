@@ -67,13 +67,13 @@ packages:
 ```sql
 -- if the 'host_name' is missing, then use 'Anonymous'
 NVL(host_name, 'Anonymous')
-AS host_name,
+AS host_name
 ```
 ```sql
  -- cleanse 'minimum_nights' and ensure '0' nights is understood as '1'
 CASE
-  WHEN minimum_nights = 0 THEN 1
-  ELSE minimum_nights
+    WHEN minimum_nights = 0 THEN 1
+    ELSE minimum_nights
 END AS minimum_nights
 ```
 ```sql
@@ -98,7 +98,8 @@ AS review_id
 
 {% test consistent_review_created_at(model) %}
 
-SELECT * FROM  {{ ref('dim_listings_cleansed') }} lc
+SELECT *
+FROM  {{ ref('dim_listings_cleansed') }} lc
 INNER JOIN {{ ref('fct_reviews') }} f
 USING (listing_id)
 WHERE f.review_date < lc.created_at
