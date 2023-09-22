@@ -72,8 +72,8 @@ AS host_name,
 ```sql
  -- cleanse 'minimum_nights' and ensure '0' nights is understood as '1'
 CASE
-	WHEN minimum_nights = 0 THEN 1
-	ELSE minimum_nights
+  WHEN minimum_nights = 0 THEN 1
+  ELSE minimum_nights
 END AS minimum_nights
 ```
 ```sql
