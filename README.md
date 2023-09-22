@@ -1,20 +1,43 @@
-# dbt Bootcamp on Udemy
+# dbt Bootcamp on [Udemy](https://www.udemy.com/course/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt)
 **Objective:** to learn dbt by transforming real-world Airbnb data from Berlin, Germany.
 </br>
-This course was made by: Zoltan and Miklos on [Udemy](https://www.udemy.com/course/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt).
+This course was made by [Zoltan and Miklos on  Udemy](https://www.udemy.com/course/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt).
 </br>
 </br>
 Snowflake was used as the data warehouse while dbt was the data transformation layer.
 </br>
 </br>
-Please scroll down to see examples of work, a dashboard, and lessons learned.
+Please scroll down to see a dashboard, lessons learned, and work samples.
 
 ## End result
-### Data model
+### Data models
 Great quality raw data was read into the source files, adjusting the column names for consistency. The data was cleaned and parsed, then joined into new views/tables/ephemeral materializations.
 </br>
 
 ![lineage graph](dbtbootcamp/assets/lineage_graph.png)
+
+### Dashboard summary
+Built using Preset.io
+</br>
+![dashboard summary](dbtbootcamp/assets/dashboard-dbt-airbnb-summary.png)
+</br>
+
+
+### Learned lessons:
+* Theory behind the data science process, the advantages of dbt
+* Using VCS, a Python venv, installing dbt and key plugins
+* Cleansing and doing operations on data through intermediate SQL
+* Models and materializations
+* Snapshots and source freshness
+* Tests: built-in and custom made
+* External packages and Macros
+* Documentation: best practices for writing and building documentation, including the Docs block
+</br>
+
+**Note:** </br>
+Everything in this repository was written by me, sometimes by following video lectures, other times ahead of the lecture. At least 3 of the models / docs / test files were individual assignments.
+</br>
+
 
 ### Data after undergoing transformation:
 #### dim_listings_w_hosts
@@ -23,12 +46,6 @@ Great quality raw data was read into the source files, adjusting the column name
 ![mart_fullmoon_reviews](dbtbootcamp/assets/mart_fullmoon_reviews.png)
 
 </br>
-
-## The source databases:
-![input schema](dbtbootcamp/assets/input_schema.png)
-
-</br>
-
 
 ## Libraries and examples of work done:
 ### libraries used:
@@ -132,32 +149,10 @@ SELECT * FROM {{ source('airbnb', 'listings') }}
 </br>
 
 
-### Dashboard summary
-Built using Preset.io
-</br>
-![dashboard summary](dbtbootcamp/assets/dashboard-dbt-airbnb-summary.png)
-</br>
+## Input schema:
+![input schema](dbtbootcamp/assets/input_schema.png)
 
-## Conclusion
-The course took about a week and I can fully recommend it.
 </br>
-
-**Learned lessons:**
-* Theory behind the data science process, the advantages of dbt
-* Using VCS, a Python venv, installing dbt and key plugins
-* Cleansing and doing operations on data through intermediate SQL
-* Models and materializations
-* Snapshots and source freshness
-* Tests: built-in and custom made
-* External packages and Macros
-* asd
-* Documentation: best practices for writing and building documentation, including the Docs block
-</br>
-
-**Note:** </br>
-Everything in this repository was written by me, sometimes by following video lectures, other times ahead of the lecture. At least 3 of the models / docs / test files were individual assignments.
-</br>
-
 
 
 ## How to: run it yourself
