@@ -109,16 +109,16 @@ WHERE f.review_date < lc.created_at
 
 ```yaml
 # regular expression checking if source input string is formatted well
-	- dbt_expectations.expect_column_values_to_match_regex:
-		regex: "^\\\\$[0-9][0-9\\\\.]+$"
+- dbt_expectations.expect_column_values_to_match_regex:
+	regex: "^\\\\$[0-9][0-9\\\\.]+$"
 ```
 
 ```yaml
 # outlier test,  whether 99% of the values fall in the chosen range
-	- dbt_expectations.expect_column_quantile_values_to_be_between:
-		quantile: .99
-		min_value: 50
-		max_value: 500
+- dbt_expectations.expect_column_quantile_values_to_be_between:
+	quantile: .99
+	min_value: 50
+	max_value: 500
 ```
 </br>
 
