@@ -66,25 +66,25 @@ packages:
 ### Cleansing data using SQL and Jinja
 ```sql
 -- if the 'host_name' is missing, then use 'Anonymous'
-  NVL(host_name, 'Anonymous')
-  AS host_name,
+NVL(host_name, 'Anonymous')
+AS host_name,
 ```
 ```sql
  -- cleanse 'minimum_nights' and ensure '0' nights is understood as '1'
-  CASE
+CASE
 	WHEN minimum_nights = 0 THEN 1
-    ELSE minimum_nights
-  END AS minimum_nights
+	ELSE minimum_nights
+END AS minimum_nights
 ```
 ```sql
  -- parse the string 'price' into a number w/ 2 decimals
-  REPLACE(price_str,'$') :: NUMBER(10,2)
-  AS price
+REPLACE(price_str,'$') :: NUMBER(10,2)
+AS price
 ```
 ```sql
 -- adding a new column that hashes 4 others using a jinja macro
-  {{dbt_utils.surrogate_key(['listing_id', 'review_date', 'reviewer_name', 'review_text'])}}
-  AS review_id
+{{dbt_utils.surrogate_key(['listing_id', 'review_date', 'reviewer_name', 'review_text'])}}
+AS review_id
 
 ```
 </br>
