@@ -25,7 +25,7 @@ Built using Preset.io
 
 ### Learned lessons:
 * Theory behind the data science process, the advantages of dbt
-* Using VCS, a Python venv, installing dbt and key plugins
+* Using Visual Studio Code, Python venv, key plugins for dbt
 * Cleansing and doing operations on data through intermediate SQL
 * Models and materializations
 * Snapshots and source freshness
