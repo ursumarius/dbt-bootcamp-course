@@ -1,45 +1,43 @@
 # dbt Bootcamp on [Udemy](https://www.udemy.com/course/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt)
-**Objective:** to learn dbt by transforming real-world Airbnb data from Berlin, Germany.
-</br>
-This course was made by [Zoltan and Miklos on  Udemy](https://www.udemy.com/course/complete-dbt-data-build-tool-bootcamp-zero-to-hero-learn-dbt).
+
+
+**Objective:**  learn dbt by transforming real-world Airbnb data.
 </br>
 </br>
 Snowflake was used as the data warehouse while dbt was the data transformation layer.
-</br>
-</br>
-Please scroll down to see a dashboard, lessons learned, and work samples.
 
-## End result
-### Data models
-Great quality raw data was read into the source files, adjusting the column names for consistency. The data was cleaned and parsed, then joined into new views/tables/ephemeral materializations.
+Quality raw data was read into the source files, adjusting the column names for consistency. The data was cleaned, then joined into new views/tables/ephemeral materializations.
 </br>
-
-![lineage graph](dbtbootcamp/assets/lineage_graph.png)
-
-### Dashboard summary
-Built using Preset.io
-</br>
-![dashboard summary](dbtbootcamp/assets/dashboard-dbt-airbnb-summary.png)
-</br>
-
 
 ### Learned lessons:
-* Theory behind the data science process, the advantages of dbt
+* Theory behind the data science process, the advantages of `dbt`
 * Using Visual Studio Code, Python venv, key plugins for dbt
 * Cleansing and doing operations on data through intermediate SQL
-* Models and materializations
-* Snapshots and source freshness
-* Tests: built-in and custom made
-* External packages and Macros
-* Documentation: best practices for writing and building documentation, including the Docs block
+* `Models` and `Materializations`
+* `Snapshots` and `Source freshness`
+* `Tests`: built-in and custom made
+* `External packages` and `Macros`
+* [Documentation](https://ursumarius.github.io/dbt-bootcamp-course/#!/model/model.dbtbootcamp.dim_hosts_cleansed): used best practices for writing and building documentation, including the Docs block.
 </br>
 
-**Note:** </br>
-Everything in this repository was written by me, sometimes by following video lectures, other times ahead of the lecture. At least 3 of the models / docs / test files were individual assignments.
 </br>
 
+## End result
+### Lineage Graph ([DAG link](https://ursumarius.github.io/dbt-bootcamp-course/#!/model/model.dbtbootcamp.dim_hosts_cleansed?g_v=1))
 
-### Data after undergoing transformation:
+![lineage graph](dbtbootcamp/assets/lineage_graph.png)
+_To view documentation built using dbt, please [click here](https://ursumarius.github.io/dbt-bootcamp-course/#!/model/model.dbtbootcamp.dim_hosts_cleansed)._
+
+
+### Dashboard
+
+![dashboard summary](dbtbootcamp/assets/dashboard-dbt-airbnb-summary.png)
+</br>
+_Built using Preset.io_
+
+</br>
+
+### Schema following transformation:
 #### dim_listings_w_hosts
 ![dim_listings_w_hosts](dbtbootcamp/assets/dim_listings_w_hosts.png)
 #### mart_fullmoon_reviews
@@ -156,8 +154,4 @@ SELECT * FROM {{ source('airbnb', 'listings') }}
 </br>
 
 
-## How to: run it yourself
-### Work in progress
 
-## Actual documentation:
-### Work in progress
