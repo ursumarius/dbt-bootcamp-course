@@ -1,0 +1,1 @@
+_To view the documentation built using dbt, please [click here](https://ursumarius.github.io/dbt-bootcamp-course/#!/model/model.dbtbootcamp.dim_hosts_cleansed)._
