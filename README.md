@@ -20,8 +20,6 @@ Quality raw data was read into the source files, adjusting the column names for 
 * [Documentation](https://ursumarius.github.io/dbt-bootcamp-course/#!/model/model.dbtbootcamp.dim_hosts_cleansed): used best practices for writing and building documentation, including the Docs block.
 </br>
 
-</br>
-
 ## End result
 ### Lineage Graph ([DAG link](https://ursumarius.github.io/dbt-bootcamp-course/#!/model/model.dbtbootcamp.dim_hosts_cleansed?g_v=1))
 
@@ -146,12 +144,11 @@ SELECT * FROM {{ source('airbnb', 'listings') }}
 ### Snapshot @ change in minimum_nights:
 ![scd_raw_listings](dbtbootcamp/assets/snapshot-scd_raw_listings.png)
 </br>
-
+</br>
 
 ## Input schema:
 ![input schema](dbtbootcamp/assets/input_schema.png)
 
-</br>
 
 
 
