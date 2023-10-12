@@ -18,7 +18,6 @@ Quality raw data was read into the source files, adjusting the column names for 
 * `Tests`: built-in and custom made
 * `External packages` and `Macros`
 * [Documentation](https://ursumarius.github.io/dbt-bootcamp-course/#!/model/model.dbtbootcamp.dim_hosts_cleansed): used best practices for writing and building documentation, including the Docs block.
-</br>
 
 ## End result
 ### Lineage Graph ([DAG link](https://ursumarius.github.io/dbt-bootcamp-course/#!/model/model.dbtbootcamp.dim_hosts_cleansed?g_v=1))
