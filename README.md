@@ -30,12 +30,12 @@ _To view documentation built using dbt, please [click here](https://ursumarius.g
 
 #### Accomodations summary
 
-![dashboard summary](dbtbootcamp/assets/summary-dashboard-bnb.png)
+![dashboard summary](dbtbootcamp/assets/summary-dashboard-bnb.jpg)
 </br>
 
 #### Host details
 
-![dashboard host](dbtbootcamp/assets/host-overview-bnb.png)
+![dashboard host](dbtbootcamp/assets/host-overview-bnb.jpg)
 
 </br>
 _Built using Tableau_
