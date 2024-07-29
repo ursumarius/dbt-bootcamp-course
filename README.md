@@ -37,15 +37,15 @@ _To view documentation built using dbt, please [click here](https://ursumarius.g
 
 ![dashboard host](dbtbootcamp/assets/host-overview-bnb.jpg)
 
-</br>
-_Built using Tableau_
-</br>
 
-### Tables following transformation:
+### Transformed tables:
 #### ``dim_listings_w_hosts`` (added host ``name`` and ``id``)
 ![dim_listings_w_hosts](dbtbootcamp/assets/dim_listings_w_hosts.png)
 #### ``mart_fullmoon_reviews`` (combine with external data to flag ``full_moon``)
 ![mart_fullmoon_reviews](dbtbootcamp/assets/mart_fullmoon_reviews.png)
+
+### Input schema:
+![input schema](dbtbootcamp/assets/input_schema.png)
 
 </br>
 
@@ -150,10 +150,9 @@ SELECT * FROM {{ source('airbnb', 'listings') }}
 ### Snapshot @ change in minimum_nights:
 ![scd_raw_listings](dbtbootcamp/assets/snapshot-scd_raw_listings.png)
 </br>
-</br>
 
-## Input schema:
-![input schema](dbtbootcamp/assets/input_schema.png)
+
+#### The End. Thanks for reading.
 
 
 
