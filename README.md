@@ -26,18 +26,25 @@ Quality raw data was read into the source files, adjusting the column names for 
 _To view documentation built using dbt, please [click here](https://ursumarius.github.io/dbt-bootcamp-course/#!/model/model.dbtbootcamp.dim_hosts_cleansed)._
 
 
-### Dashboard
+### Dashboards
 
-![dashboard summary](dbtbootcamp/assets/dashboard-dbt-airbnb-summary.png)
+#### Accomodations summary
+
+![dashboard summary](dbtbootcamp/assets/summary-dashboard-bnb.png)
 </br>
-_Built using Preset.io_
+
+#### Host details
+
+![dashboard host](dbtbootcamp/assets/host-overview-bnb.png)
 
 </br>
+_Built using Tableau_
+</br>
 
-### Schema following transformation:
-#### dim_listings_w_hosts
+### Tables following transformation:
+#### ``dim_listings_w_hosts`` (added host ``name`` and ``id``)
 ![dim_listings_w_hosts](dbtbootcamp/assets/dim_listings_w_hosts.png)
-#### mart_fullmoon_reviews
+#### ``mart_fullmoon_reviews`` (combine with external data to flag ``full_moon``)
 ![mart_fullmoon_reviews](dbtbootcamp/assets/mart_fullmoon_reviews.png)
 
 </br>
