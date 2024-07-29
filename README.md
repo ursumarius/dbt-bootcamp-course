@@ -37,12 +37,14 @@ _To view documentation built using dbt, please [click here](https://ursumarius.g
 
 ![dashboard host](dbtbootcamp/assets/host-overview-bnb.jpg)
 
+</br>
 
 ### Transformed tables:
 #### ``dim_listings_w_hosts`` (added host ``name`` and ``id``)
 ![dim_listings_w_hosts](dbtbootcamp/assets/dim_listings_w_hosts.png)
 #### ``mart_fullmoon_reviews`` (combine with external data to flag ``full_moon``)
 ![mart_fullmoon_reviews](dbtbootcamp/assets/mart_fullmoon_reviews.png)
+</br>
 
 ### Input schema:
 ![input schema](dbtbootcamp/assets/input_schema.png)
